@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,54 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="shortcut icon" href="/assets/images/favicon-32x32.png" type="image/x-icon">
 </head>
-<body>
-    
+
+<body class="bg-[#202c37] w-full">
+    <main class="w-full">
+        <div class="bg-[#2b3945] h-24 w-full flex justify-between items-center text-white px-4 md:px-28">
+            <div class="md:text-2xl font-semibold">Where in the world?</div>
+            <div>
+                <img src="" alt="">
+                <p>Dark Mode</p>
+            </div>
+        </div>
+
+        <div class="mx-4 mt-10">
+            <div class="flex w-full relative  h-14 rounded-md shadow-md">
+                <div class="absolute rounded-l-lg h-full bg-[#2b3945] w-20 z-1 flex items-center justify-center"><svg
+                        class="fill-white" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        width="24px" fill="#1f1f1f">
+                        <path
+                            d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
+                    </svg></div>
+                <input type="text" class="w-full outline-none bg-[#2b3945] text-white rounded-md py-4 pl-24"
+                    placeholder="Search for a country...">
+            </div>
+
+            <select name="" id="selectRegion"
+                class="mt-12 cursor-pointer w-1/2 h-14 px-4 bg-[#2b3945] shadow-lg rounded-md text-white shadow-md">
+                <option class="outline-none m-24" value="" disabled selected>Filter by Region</option>
+            </select>
+
+        </div>
+
+        <div class="countryCardsContainer gap-24 flex flex-col md:flex-row md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-16 md:mx-4 mx-12">
+            
+            <div class="flex flex-col w-full bg-[#2b3945] shadow-lg rounded-md">
+                <div>
+                    <img class="rounded-t-md" src="https://flagcdn.com/af.svg" alt="Afghanistan Flag" />
+                </div>
+                <div class="w-full  px-6 pb-16">
+                    <h1 class="font-semibold text-white text-3xl mt-8">Germany</h1>
+                    <p class="text-white  font-medium mt-6">Population:</p>
+                    <p class="text-white font-medium">Region:</p>
+                    <p class="text-white font-medium">Captain:</p>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
     <script src="/script.js"></script>
 </body>
+
 </html>
