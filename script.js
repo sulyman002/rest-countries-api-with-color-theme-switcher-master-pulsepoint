@@ -4,14 +4,16 @@ fetch('data.json')
 
         const selectRegion = document.getElementById('selectRegion');
 
-        const filterRegion = [...new set(data.map(dRegion => dRegion.region))];
+        // const filterRegion = [...new set(data.map(dRegion => dRegion.region))];
 
-        filterRegion.forEach(regions => {
-            const regionOptiion = document.createElement('option');
-            regionOptiion.value = regions;
-            regionOptiion.textContent = regions;
-            selectRegion.appendChild(regionOptiion);
-        })
+        // filterRegion.forEach(regions => {
+        //     const regionOptiion = document.createElement('option');
+        //     regionOptiion.value = regions;
+        //     regionOptiion.textContent = regions;
+        //     selectRegion.appendChild(regionOptiion);
+        // });
+
+        // console.log(data);
 
         //      regions.forEach(region => {
         //   const option = document.createElement('option');
@@ -20,12 +22,12 @@ fetch('data.json')
         //   regionSelect.appendChild(option);
         // });
 
-        //     data.forEach((dataV, index) => {
+            data.forEach((dataV, index) => {
 
 
-        //         selectRegion.innerHTML += `<option value="${dataV.region}">${dataV.region}</option>`;
+                selectRegion.innerHTML += `<option value="${dataV.region}">${dataV.region}</option>`;
 
-        //     })
+            })
 
         const countryCardsContainer = document.querySelector('.countryCardsContainer');
 
@@ -35,15 +37,15 @@ fetch('data.json')
 
             cardTemplate.innerHTML += `
                 <div>
-                    <img class="rounded-t-md" src="${country.flags.svg}" />
+                    <img class="rounded-t-md h-48 w-full object-cover" src="${country.flags.svg}" />
                 </div>
                 <div class="w-full  px-6 pb-16">
-                    <h1 class="font-semibold text-white text-3xl mt-8">Germany</h1>
-                    <p class="text-white  font-medium mt-6">Population:</p>
-                    <p class="text-white font-medium">Region:</p>
-                    <p class="text-white font-medium">Captain:</p>
+                    <h1 class="font-semibold text-white text-3xl mt-8">${country.name}</h1>
+                    <p class="text-white  font-medium mt-6">Population:<span class="font-thin text-gray-400">${" " + country.population}</span></p>
+                    <p class="text-white font-medium">Region: <span class="font-thin text-gray-400"> ${" " + country.region}</span></p>
+                    <p class="text-white font-medium">Captal:<span class="font-thin text-gray-400"> ${" " + country.capital}</p>
                 </div>
-            `;countryCardsContainer.appendChild(cardTemplate)
+            `;countryCardsContainer.appendChild(cardTemplate);
 
         });
     });
