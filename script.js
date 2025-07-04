@@ -39,16 +39,17 @@ fetch('data.json')
 
 
         function displaySearchedCountries(countriesSearch) {
+            countryCardsContainer.innerHTML = "";
             showDetailsOfCountries.innerHTML = "";
             countriesSearch.forEach(country => {
                 const countryElement = document.createElement('div');
                 countryElement.className = '';
-                counteyElement.innerHTML = `
+                countryElement.innerHTML = `
                     <div class="mt-14 hiddn flex flex-col md:flex-row md:gap-44">
                         <div class="md:w-1/2 bg-red-90 shadow-2xl"><img class="md:w-5/5 md:h-full"
-                                src="https://flagcdn.com/af.svg" alt="" height="40px"></div>
+                                src="${country.flag}" alt="" height="40px"></div>
                         <div class="md:w-1/2">
-                            <h1 class="text-white mt-10 font-bold text-2xl cursor-pointer">Belgium</h1>
+                            <h1 class="text-white mt-10 font-bold text-2xl cursor-pointer">${" " + country.name}</h1>
                             <div class="md:flex w-full gap-60">
 
                                 <div class="text-white mt-6 md:mt-8  leading-loose">
@@ -60,8 +61,8 @@ fetch('data.json')
                                 </div>
                                 <div class="text-white mt-6 md:mt-8 leading-loose">
                                     <p>Top Level Domain:${" " + country.topLevelDomain}</p>
-                                    <p>Currencies:${" " + country.currencies[0].name}</p>
-                                    <p>Languages:${" " + country.languages[0].name}</p>
+                                    <p>Currencies:${" " + country.capital}</p>
+                                    <p>Languages:${" " + country.capital}</p>
                                 </div>
 
                             </div>
