@@ -19,15 +19,15 @@
             </div>
         </div>
 
-        <div class="mx-4 mt-10 flex flex-col md:flex-row md:justify-between">
+        <div class="hidden mx-4 mt-10 flex flex-col md:flex-row md:justify-between">
             <div class="flex w-full md:w-[500px] md:min-w-[400px] relative h-14 rounded-md shadow-md">
-                <div class="absolute rounded-l-lg h-full bg-[#2b3945] w-20 z-1 flex items-center justify-center"><svg
+                <div class="absolute searchBtn rounded-l-lg h-full bg-[#2b3945] w-20 z-1 flex items-center justify-center"><svg
                         class="fill-white" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                         width="24px" fill="#1f1f1f">
                         <path
                             d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
                     </svg></div>
-                <input type="text" class="w-full outline-none bg-[#2b3945] text-white rounded-md py-4 pl-24"
+                <input type="text" class="searchInput w-full outline-none bg-[#2b3945] text-white rounded-md py-4 pl-24"
                     placeholder="Search for a country...">
             </div>
 
@@ -44,6 +44,48 @@
 
         </div>
 
+        <div class="px-6 flex flex-col w-full ">
+            <div class="bg-[#2b3945] flex w-28 text-white items-center justify-center shadow-2xl p-1 gap-1 cursor-pointer">
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                    width="24px" fill="#1f1f1f">
+                    <path d="M400-240 160-480l240-240 56 58-142 142h486v80H314l142 142-56 58Z" />
+                </svg>
+                <p>Back</p>
+            </div>
+
+            <div class="mt-14 flex flex-col md:flex-row md:gap-44">
+                <div class="md:w-1/2 bg-red-90 shadow-2xl"><img class="md:w-5/5 md:h-full" src="https://flagcdn.com/af.svg" alt="" height="40px"></div>
+                <div class="md:w-1/2">
+                    <h1 class="text-white mt-10 font-bold text-2xl cursor-pointer">Belgium</h1>
+                    <div class="md:flex w-full gap-60">
+
+                        <div class="text-white mt-6 md:mt-8  leading-loose">
+                            <p>Native Name:</p>
+                            <p>Population:</p>
+                            <p>Region:</p>
+                            <p>Sub Region:</p>
+                            <p>Capital:</p>
+                        </div>
+                        <div class="text-white mt-6 md:mt-8 leading-loose">
+                            <p>Top Level Domain:</p>
+                            <p>Currencies:</p>
+                            <p>Languages:</p>
+                        </div>
+
+                    </div>
+
+                    <div class="text-white mt-6 md:mt-24 md:flex md:items-center md:justify-start md:gap-6">
+                        <p class="text-1xl font-semibold mb-4">Border Countries:</p>
+                        <div class="flex gap-4 w-full md:w-2/4">
+                            <button class="px-6 py-1 bg-[#2b3945] flex text-white items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">France</button>
+                            <button class="px-6 py-1 bg-[#2b3945] flex text-white items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">Germany</button>
+                            <button class="px-6 py-1 bg-[#2b3945] flex text-white items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">Netherlands</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </main>
     <script src="/script.js"></script>

@@ -33,7 +33,7 @@ fetch('data.json')
 
         data.forEach(country => {
             const cardTemplate = document.createElement('div');
-            cardTemplate.className = 'flex flex-col w-full bg-[#2b3945] shadow-lg rounded-md';
+            cardTemplate.className = 'flex hidden flex-col w-full bg-[#2b3945] shadow-lg rounded-md';
 
             cardTemplate.innerHTML += `
                 <div>
@@ -48,4 +48,36 @@ fetch('data.json')
             `;countryCardsContainer.appendChild(cardTemplate);
 
         });
+
+
+        const searchInput = document.querySelector('.searchInput');
+        const searchBtn = document.querySelector('.searchBtn');
+        //countryCardsContainer ~ AREA TO DISPLAY
+
+
+        function displaySearchedCountries(countriesSearch) {
+            countryCardsContainer.innerHTML = "";
+            countriesSearch.forEach(country =>{
+                const counteyElement = document.createElement('div');
+                counteyElement.textContent = country.name;
+                countryCardsContainer.appendChild(counteyElement);
+            });
+        }
+
+        displaySearchedCountries(data.name);
+
+        searchBtn.addEventListener('click', () => {
+            const search = searchInput.value.trim().toLowerCase();
+
+            if (search) {
+                const filterCountry = data.filter(countrys => 
+                    countrys.namee.toLowerCase().include(search)
+                );
+                displaySearchedCountries(filterCountry);
+            }else {
+                displaySearchedCountries(data.name);
+            }
+        }); // check it out tomorrow.
+
+
     });
