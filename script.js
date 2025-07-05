@@ -16,11 +16,11 @@ fetch('data.json')
             const filteredCountries = data.filter(country => country.region === selectedRegion);
 
             const countryCardsContainer = document.querySelector('.countryCardsContainer');
-            countryCardsContainer.innerHTML = ""; // Clear previous cards
+            countryCardsContainer.innerHTML = "";
 
             filteredCountries.forEach(country => {
                 const cardTemplate = document.createElement('div');
-                cardTemplate.className = 'flex hidde flex-col w-full bg-[#2b3945] shadow-lg rounded-md';
+                cardTemplate.className = 'card-template flex hidde flex-col w-full bg-[#2b3945] shadow-lg rounded-md';
 
                 cardTemplate.innerHTML += `
                     <div>
@@ -43,7 +43,7 @@ fetch('data.json')
 
         data.forEach(country => {
             const cardTemplate = document.createElement('div');
-            cardTemplate.className = 'flex hidde flex-col w-full bg-[#2b3945] shadow-lg rounded-md';
+            cardTemplate.className = 'card-template flex hidde flex-col w-full bg-[#2b3945] shadow-lg rounded-md';
 
             cardTemplate.innerHTML += `
                 <div>
@@ -55,8 +55,8 @@ fetch('data.json')
                     <p class="font-medium">Region: <span class="font-thin text-gray-400"> ${" " + country.region}</span></p>
                     <p class="font-medium">Captal:<span class="font-thin text-gray-400"> ${" " + country.capital}</p>
                 </div>
-            `; countryCardsContainer.appendChild(cardTemplate);
-
+            `;
+            countryCardsContainer.appendChild(cardTemplate);
         });
 
 
@@ -97,11 +97,11 @@ fetch('data.json')
                                 <p class="text-1xl font-semibold mb-4">Border Countries:</p>
                                 <div class="flex gap-4 w-full md:w-2/4">
                                     <button
-                                        class="px-6 py-1 bg-[#2b3945] flex items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">France</button>
+                                        class="btn px-6 py-1 bg-[#2b3945] flex items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">${" " + country.borders[0]}</button>
                                     <button
-                                        class="px-6 py-1 bg-[#2b3945] flex items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">Germany</button>
+                                        class="btn px-6 py-1 bg-[#2b3945] flex items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">${" " + country.borders[1]}</button>
                                     <button
-                                        class="px-6 py-1 bg-[#2b3945] flex items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">Netherlands</button>
+                                        class="btn px-6 py-1 bg-[#2b3945] flex items-center justify-center shadow-2xl p-1 gap-1 rounded-sm cursor-pointer">${" " + country.borders[2]}</button>
                                 </div>
 
                             </div>
@@ -144,6 +144,7 @@ const header = document.querySelector('.header');
 const selectRegion = document.getElementById('selectRegion');
 const searchBtn = document.querySelector('.searchBtn');
 const searchInput = document.querySelector('.searchInput');
+const backBtn = document.querySelector('.backBtn');
 
 darkBright.addEventListener('click', () => {
     document.body.classList.toggle('text-[#202c37]');
@@ -152,6 +153,18 @@ darkBright.addEventListener('click', () => {
     selectRegion.classList.toggle('bg-white');
     searchBtn.classList.toggle('bg-white');
     searchInput.classList.toggle('bg-white');
-    cardTemplate.classList.toggle('bg-white');
+    backBtn.classList.toggle('bg-white');
 
+    const allCards = document.querySelectorAll('.card-template');
+        allCards.forEach(card => {
+            card.classList.toggle('bg-white');
+            card.classList.toggle('bg-[#2b3945]');
+        });
+
+
+    const allBtn = document.querySelectorAll('.btn');
+        allBtn.forEach(btn => {
+            btn.classList.toggle('bg-white');
+            btn.classList.toggle('bg-[#2b3945]');
+        });
 });
